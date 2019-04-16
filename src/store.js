@@ -62,9 +62,11 @@ export default new Vuex.Store({
         return "";
       }
     },
-    async upload(context, data) {
+    async submitPickUp(context, data) {
+      console.log("in store");
       try {
-        await axios.post('/api/photos', data);
+        await axios.post("/api/pickup", data);
+
         return "";
       } catch (error) {
         return error.response.data.message;
@@ -74,67 +76,6 @@ export default new Vuex.Store({
       await this.$store.dispatch("getUser");
       await this.$store.dispatch("getMyPhotos");
     },
-    async uploadFinished() {
-      this.show = false;
-      try {
-        this.error = await this.$store.dispatch("getMyPhotos");
-      } catch (error) {
-        console.log(error);
-      }
-    },
-    async getMyPhotos(context) {
-      try {
-        let response = await axios.get("/api/photos");
-        context.commit('setPhotos', response.data);
-        return "";
-      } catch (error) {
-        return "";
-      }
-    },
-    async getAllPhotos(context) {
-      try {
-        let response = await axios.get("/api/photos/all");
-        context.commit('setPhotos', response.data);
-        return "";
-      } catch (error) {
-        return "";
-      }
-    },
-    async getPhoto(context, id) {
-      try {
-        let response = await axios.get("/api/photos/" + id);
-        context.commit('setPhoto', response.data);
-        return "";
-      } catch (error) {
-        return "";
-      }
-    },
-
-
-    //COMMENTS*********************************
-    async submitComment(context, data) {
-      try {
-        let response = await axios.post("/api/comments/", data);
-        context.commit('setComments', response.data);
-        return "";
-      } catch (error) {
-        return "";
-      }
-    },
-
-    async getComments(context, data) {
-      try {
-        let response = await axios.get("/api/comments/", data);
-        //context.commit('setComments', response.data);
-        return response.data;
-      } catch (error) {
-        return "";
-      }
-      //console.log(this.state.comments);
-    }
-
-
-
 
   }
 })

@@ -5,6 +5,8 @@ import Register from './views/Register.vue'
 import MyPage from './views/MyPage.vue'
 import Login from './views/Login.vue'
 import PhotoPage from './views/PhotoPage.vue'
+import PickUp from './views/PickUp.vue'
+import Account from './views/Account.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -34,6 +36,16 @@ export default new Router({
       path: '/photopage/:id',
       name: 'photopage',
       component: PhotoPage
-    }
+    },
+    {
+      path: '/pickup',
+      name: 'PickUp',
+      component: PickUp
+    },
+    {
+      path: '/account',
+      name: 'Account',
+      component: Account
+    },
   ]
 })

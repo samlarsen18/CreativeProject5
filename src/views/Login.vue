@@ -42,7 +42,7 @@
             password: this.password
           });
           if (this.error === "")
-            this.$router.push('mypage');
+            this.$router.push('account');
         } catch (error) {
           console.log(error);
         }
