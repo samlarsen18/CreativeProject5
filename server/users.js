@@ -10,6 +10,8 @@ const userSchema = new mongoose.Schema({
   username: String,
   password: String,
   name: String,
+  phone: String,
+  tireNum: Number,
   tokens: [],
 });
 
@@ -101,7 +103,9 @@ router.post('/', async (req, res) => {
     const user = new User({
       username: req.body.username,
       password: req.body.password,
-      name: req.body.name
+      name: req.body.name,
+      phone: req.body.phone,
+      tireNum: req.body.tireNum,
     });
     await user.save();
     login(user, res);

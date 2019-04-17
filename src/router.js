@@ -6,6 +6,7 @@ import MyPage from './views/MyPage.vue'
 import Login from './views/Login.vue'
 import PhotoPage from './views/PhotoPage.vue'
 import PickUp from './views/PickUp.vue'
+import DropOff from './views/DropOff.vue'
 import Account from './views/Account.vue'
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/account',
       name: 'Account',
       component: Account
+    },
+    {
+      path: '/dropoff',
+      name: 'DropOff',
+      component: DropOff
     },
   ]
 })

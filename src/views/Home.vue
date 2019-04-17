@@ -19,9 +19,8 @@
         <div class="col-md-6">
           <h2>Request Tire Delivery</h2>
           <p>Give us the date and time of your appointment and your tires will be there waiting for you.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          <router-link to="/DropOff" class="btn btn-secondary" role="button">View details »</router-link>
         </div>
-
       </div>
       <hr>
     </div>

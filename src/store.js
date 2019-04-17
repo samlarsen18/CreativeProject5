@@ -62,20 +62,51 @@ export default new Vuex.Store({
         return "";
       }
     },
-    async submitPickUp(context, data) {
-      console.log("in store");
-      try {
-        await axios.post("/api/pickup", data);
-
-        return "";
-      } catch (error) {
-        return error.response.data.message;
-      }
-    },
     async created() {
       await this.$store.dispatch("getUser");
       await this.$store.dispatch("getMyPhotos");
     },
 
+
+    async submitPickUp(context, data) {
+      try {
+        await axios.post("/api/request/pickup", data);
+        return "";
+      } catch (error) {
+        return error.response.data.message;
+      }
+    },
+    async submitDropOff(context, data) {
+      try {
+        await axios.post("/api/request/dropoff", data);
+        return "";
+      } catch (error) {
+        return error.response.data.message;
+      }
+    },
+    async getPickUps() {
+      try {
+        let response = await axios.get("/api/request/pickup");
+        return response.data;
+      } catch (error) {
+        return "";
+      }
+    },
+    async getDropOffs() {
+      try {
+        let response = await axios.get("/api/request/dropoff");
+        return response.data;
+      } catch (error) {
+        return "";
+      }
+    },
+    async deleteRequest(id) {
+      try {
+        await axios.delete("/api/request/" + id);
+        return "";
+      } catch (error) {
+        return "";
+      }
+    }
   }
 })

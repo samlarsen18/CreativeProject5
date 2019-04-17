@@ -19,7 +19,14 @@
           <label for="password">Password</label>
           <input v-model="password" type="password" placeholder="Password">
         </div>
-
+        <div class="pure-control-group">
+          <label for="password">Phone Number</label>
+          <input v-model="phone" type="tel" placeholder="Phone Number">
+        </div>
+        <div class="pure-control-group">
+          <label for="password">Number of Tires</label>
+          <input v-model="tireNum" type="number" placeholder="#">
+        </div>
         <div class="pure-controls">
           <button type="submit" class="pure-button pure-button-primary">Submit</button>
         </div>
@@ -38,6 +45,8 @@
         username: '',
         password: '',
         error: '',
+        phone: '',
+        tireNum: '',
       }
     },
     methods: {
@@ -45,11 +54,13 @@
         try {
           this.error = await this.$store.dispatch("register", {
             name: this.name,
+            phone: this.phone,
+            tireNum: this.tireNum,
             username: this.username,
             password: this.password
           });
           if (this.error === "")
-            this.$router.push('mypage');
+            this.$router.push('account');
         } catch (error) {
           console.log(error);
         }

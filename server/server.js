@@ -20,6 +20,6 @@ app.use(cookieParser());
 const users = require("./users.js");
 app.use("/api/users", users.routes);
 
-const pickups = require("./pickup.js");
-app.use("/api/pickup", pickups.routes);
+const requests = require("./request.js");
+app.use("/api/request", requests.routes);
 app.listen(3002, () => console.log('Server listening on port 3002!'));
