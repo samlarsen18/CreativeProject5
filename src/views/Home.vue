@@ -10,6 +10,13 @@
 
     <div class="container">
       <!-- Example row of columns -->
+      <div class="info">
+        <h3>
+          Tire Caddy is a tire storage service. Just let us know where you get your seasonal tires changed and we'll pick them up and store them.
+          When it's time to change back, we'll deliver them to your choice of tire service center
+        </h3>
+
+      </div>
       <div class="row">
         <div class="col-md-6">
           <h2>Request Tire Pick-Up</h2>
@@ -44,6 +51,12 @@
 
 
 <style>
+  .info {
+    text-align: center;
+    margin: 80px;
+    margin-top: 40px;
+  }
+
   .jumbotron {
     background-image: url("../../public/images/tires_lined_up.jpg");
     background-repeat: no-repeat;
@@ -73,6 +86,7 @@
   .row {
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px;
   }
 
   #learnMore {

@@ -28,6 +28,7 @@
       </main>
       <footer class="container">
         <p>©TireCaddy 2019</p>
+        <a href="https://github.com/samlarsen18/CreativeProject5">Github</a>
       </footer>
     </body>
   </div>

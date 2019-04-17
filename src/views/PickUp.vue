@@ -12,10 +12,13 @@
       </div>
       <div v-if="user" class="modal-body col-md-6">
         <form @submit.prevent="SubmitPickUp">
+          <label for="Time">Date and Time: </label>
           <input v-model="time" placeholder="Time">
           <p></p>
+          <label for="location">Tire Service Center:</label>
           <input v-model="location" placeholder="Location">
           <p></p>
+
           <textarea v-model="details" placeholder="Details (Optional)"></textarea>
           <p></p>
           <button type="submit" class="pure-button pure-button-secondary">Submit</button>
@@ -76,6 +79,10 @@
   }
 </script>
 <style>
+  label {
+    padding: 5px;
+  }
+
   .col-md-6 h2 {
     text-align: center;
     margin: 40px;

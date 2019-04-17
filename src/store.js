@@ -7,23 +7,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: null,
-    photos: [],
-    photo: null,
-    comments: [],
   },
   mutations: {
     setUser(state, user) {
       state.user = user;
     },
-    setPhotos(state, photos) {
-      state.photos = photos;
-    },
-    setPhoto(state, photo) {
-      state.photo = photo;
-    },
-    setComments(state, comments) {
-      state.comments = comments;
-    }
   },
   actions: {
     async register(context, data) {

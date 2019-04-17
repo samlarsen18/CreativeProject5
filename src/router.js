@@ -2,9 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Register from './views/Register.vue'
-import MyPage from './views/MyPage.vue'
 import Login from './views/Login.vue'
-import PhotoPage from './views/PhotoPage.vue'
 import PickUp from './views/PickUp.vue'
 import DropOff from './views/DropOff.vue'
 import Account from './views/Account.vue'
@@ -19,11 +17,6 @@ export default new Router({
       component: Home
     },
     {
-      path: '/mypage',
-      name: 'mypage',
-      component: MyPage,
-    },
-    {
       path: '/register',
       name: 'register',
       component: Register
@@ -32,11 +25,6 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
-    },
-    {
-      path: '/photopage/:id',
-      name: 'photopage',
-      component: PhotoPage
     },
     {
       path: '/pickup',
